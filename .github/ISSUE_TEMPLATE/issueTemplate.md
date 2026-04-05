@@ -1,0 +1,19 @@
+## Summary
+Short, clear description of the task or problem.
+
+## Type
+(feature / bug / enhancement / refactor)
+
+## Why
+Why this is needed or important.
+
+## Details
+Describe what needs to be done.
+
+## Acceptance Criteria
+- [ ] Condition 1
+- [ ] Condition 2
+- [ ] Condition 3
+
+## Notes
+Optional notes, ideas, or references.
