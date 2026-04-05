@@ -8,6 +8,8 @@ public class playerMovement : MonoBehaviour
     public Transform groundCheck;
     public float groundCheckRadius = 0.2f;
     public LayerMask groundLayer;
+    public int extraJumpsValue = 1;
+    private int extraJumps;
 
     private Rigidbody2D rb;
     private bool isGrounded;
@@ -17,6 +19,7 @@ public class playerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        extraJumps = extraJumpsValue;
     }
 
     void Update()
@@ -26,10 +29,21 @@ public class playerMovement : MonoBehaviour
         if (Keyboard.current.dKey.isPressed) moveInput = 1f;
 
         rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
-
-        if (Keyboard.current.spaceKey.wasPressedThisFrame && isGrounded)
+        if (isGrounded)
         {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+            extraJumps = extraJumpsValue;
+        }
+        if (Keyboard.current.spaceKey.wasPressedThisFrame)
+        {
+            if (isGrounded)
+            {
+                rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+            }
+            else if (extraJumps > 0)
+            {
+                rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+                extraJumps--;
+            }
         }
         SetAnimation(moveInput);
     }
