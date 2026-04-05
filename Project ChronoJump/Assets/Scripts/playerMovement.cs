@@ -11,10 +11,12 @@ public class playerMovement : MonoBehaviour
 
     private Rigidbody2D rb;
     private bool isGrounded;
+    private Animator animator;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -29,10 +31,37 @@ public class playerMovement : MonoBehaviour
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
         }
+        SetAnimation(moveInput);
     }
 
     private void FixedUpdate()
     {
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+    }
+
+    private void SetAnimation(float moveInput)
+    {
+        if (isGrounded)
+        {
+            if (moveInput == 0)
+            {
+                animator.Play("playerIdle");
+            }
+            else
+            {
+                animator.Play("playerRun");
+            }
+        }
+        else
+        {
+            if (rb.linearVelocity.y > 0)
+            {
+                animator.Play("playerJump");
+            }
+            else
+            {
+                animator.Play("playerFall");
+            }
+        }
     }
 }
