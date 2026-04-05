@@ -1,3 +1,11 @@
+---
+name: General Issue
+about: Create a general task or feature
+title: ""
+labels: ""
+assignees: ""
+---
+
 ## Summary
 Short, clear description of the task or problem.
 

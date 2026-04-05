@@ -1,3 +1,11 @@
+---
+name: Pull Request
+about: Create a general pull request
+title: ""
+labels: ""
+assignees: ""
+---
+
 ## What
 Brief summary of what this PR does.
 
