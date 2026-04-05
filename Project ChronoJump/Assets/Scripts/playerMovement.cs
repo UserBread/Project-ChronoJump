@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class playerMovement : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed = 5f;
     public float jumpForce = 10f;
@@ -25,9 +25,12 @@ public class playerMovement : MonoBehaviour
     void Update()
     {
         float moveInput = 0f;
-        if (Keyboard.current.aKey.isPressed) moveInput = -1f;
-        if (Keyboard.current.dKey.isPressed) moveInput = 1f;
-
+        Keyboard keyboard = Keyboard.current;
+        if (keyboard != null)
+        {
+            if (keyboard.aKey.isPressed) moveInput = -1f;
+            if (keyboard.dKey.isPressed) moveInput = 1f;
+        }
         rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
         if (isGrounded)
         {

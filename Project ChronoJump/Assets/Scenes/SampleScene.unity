@@ -384,7 +384,7 @@ GameObject:
   - component: {fileID: 1081325809}
   - component: {fileID: 1081325808}
   m_Layer: 6
-  m_Name: Gound
+  m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -862,6 +862,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  extraJumpsValue: 1
 --- !u!95 &1794342524
 Animator:
   serializedVersion: 7
