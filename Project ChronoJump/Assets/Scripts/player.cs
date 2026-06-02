@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     public Transform groundCheck;
     public float groundCheckRadius = 0.2f;
     public LayerMask groundLayer;
+    public Image healthImage;
     public int extraJumpsValue = 1;
     private int extraJumps;
 
@@ -53,6 +55,8 @@ public class PlayerMovement : MonoBehaviour
             }
         }
         SetAnimation(moveInput);
+
+        healthImage.fillAmount = health / 100f;
     }
 
     private void FixedUpdate()
