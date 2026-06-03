@@ -4,6 +4,54 @@
 [Oo]bj/
 [Bb]uild/
 [Bb]uilds/
+Logs/
+UserSettings/
+MemoryCaptures/
+
+# Visual Studio / IDE
+.vs/
+.vscode/
+.idea/
+*.suo
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.opendb
+*.VC.db
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Build artifacts
+*.apk
+*.aab
+*.exe
+*.app
+
+# Unity packages and exports
+*.unitypackage
+
+# Package caches
+Library/PackageCache/
+PackageCache/
+
+# Uncomment to ignore large third-party asset folders (e.g. TextMesh Pro vendor files)
+**/Assets/TextMesh Pro/
+
+# Keep project metadata (.sln/.csproj) ignored if you prefer them generated locally
+# Uncomment if you don't want these tracked:
+# *.csproj
+# *.unityproj
+# *.sln
+# Unity generated folders
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
 [Ll]ogs/
 [Uu]ser[Ss]ettings/
 [Mm]emoryCaptures/
